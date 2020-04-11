@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+<script>
+    var number = [[${number}]];
+    var message = "[[${message}]]";
+    console.log(message);
+</script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/dx.all.js"></script>
+    <script src="/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bank.css}"/>
+</head>
+<body>
+<div class="index-page">
+	<div class="index-header">
+	    <h1></h1><p th:text="'Bienvenue ' + ${client.lastname + ' ' + client.firstname}"></p></h1>
+	</div>
+	<div class="index-container">
+		<div class="blue"></div>
+		<div class="red"></div>
+	</div>
+</div>
+</body>
+</html>
