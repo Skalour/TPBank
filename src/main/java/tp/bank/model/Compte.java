@@ -107,6 +107,9 @@ public class Compte implements Serializable{
 		this.operations.add(operation);
 	}
     
+	public void showOperations() {
+		for(Operation o : this.operations)System.out.println(o);
+	}
     
 
 }

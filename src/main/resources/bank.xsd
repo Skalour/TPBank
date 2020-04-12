@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost:8080/BankWebService"
+           targetNamespace="http://localhost:8080/BankWebService" elementFormDefault="qualified">
+           
+    <xs:element name="refundAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="xs:long"/>
+                <xs:element name="amount" type="xs:double"/>
+                <xs:element name="origin" type="xs:string"/>
+                <xs:element name="details" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="refundAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+           
+    <xs:element name="chargeAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="xs:long"/>
+                <xs:element name="amount" type="xs:double"/>
+                <xs:element name="origin" type="xs:string"/>
+                <xs:element name="details" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="chargeAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+           
+</xs:schema>

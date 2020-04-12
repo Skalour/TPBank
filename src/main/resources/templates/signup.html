@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Enregistrement</title>
+    <title>Inscription</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bank.css}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<section layout:fragment="body">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div th:if="${param.success}">
-                    <div class="alert alert-info">
-                        Vous êtes désormais enregistré sur la plateforme, vous vous connecter en cliquant <a href="/" th:href="@{/login}">ici</a></span>
-                    </div>
-                </div>
-
-                <h1 class="text-center">Enregistrement</h1>
+                <h1 class="text-center">Formulaire d'inscription</h1>
                 <form th:action="@{/signup}" th:object="${client}" method="post">
 
                     <p class="error-message"
@@ -46,6 +39,57 @@
                            th:text="${error}">Erreur de validation</p>
                     </div>
                     <div class="form-group"
+                         th:classappend="${#fields.hasErrors('postalAddress')}? 'has-error':''">
+                        <label for="postalAddress" class="control-label">Adresse postale</label>
+                        <input id="postalAddress"
+                               class="form-control"
+                               th:field="*{postalAddress}"/>
+                        <p class="error-message"
+                           th:each="error : ${#fields.errors('postalAddress')}"
+                           th:text="${error}">Erreur de validation</p>
+                    </div>
+                    <div class="form-group"
+                         th:classappend="${#fields.hasErrors('postalCode')}? 'has-error':''">
+                        <label for="postalCode" class="control-label">Code postal</label>
+                        <input id="postalCode"
+                               class="form-control"
+                               placeholder="ex : 59300"
+                               th:field="*{postalCode}"/>
+                        <p class="error-message"
+                           th:each="error : ${#fields.errors('postalCode')}"
+                           th:text="${error}">Erreur de validation</p>
+                    </div>
+                    <div class="form-group"
+                         th:classappend="${#fields.hasErrors('city')}? 'has-error':''">
+                        <label for="city" class="control-label">Ville</label>
+                        <input id="city"
+                               class="form-control"
+                               th:field="*{city}"/>
+                        <p class="error-message"
+                           th:each="error : ${#fields.errors('city')}"
+                           th:text="${error}">Erreur de validation</p>
+                    </div>
+                    <div class="form-group"
+                         th:classappend="${#fields.hasErrors('phoneNumber')}? 'has-error':''">
+                        <label for="phoneNumber" class="control-label">Téléphone</label>
+                        <input id="phoneNumber"
+                               class="form-control"
+                               th:field="*{phoneNumber}"/>
+                        <p class="error-message"
+                           th:each="error : ${#fields.errors('phoneNumber')}"
+                           th:text="${error}">Erreur de validation</p>
+                    </div>
+                    <div class="form-group"
+                         th:classappend="${#fields.hasErrors('birthdate')}? 'has-error':''">
+                        <label for="birthdate" class="control-label">Date de naissance (aaaa-mm-jj)</label>
+                        <input id="birthdate"
+                               class="form-control"
+                               th:field="*{birthdate}"/>
+                        <p class="error-message"
+                           th:each="error : ${#fields.errors('birthdate')}"
+                           th:text="${error}">Erreur de validation</p>
+                    </div>
+                    <div class="form-group"
                          th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
                         <label for="email" class="control-label">E-mail</label>
                         <input id="email"
@@ -67,13 +111,12 @@
                            th:text="${error}">Erreur de validation</p>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">S'enregistrer</button>
-                        <span>Déjà enregistré ? <a href="/" th:href="@{/login}">Connectez-vous ici</a></span>
+                        <button type="submit" class="btn btn-success">Créer votre compte</button>
+                        <span>Déjà client ? <a href="/" th:href="@{/login}">Connectez-vous ici</a></span>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</section>
 </body>
 </html>

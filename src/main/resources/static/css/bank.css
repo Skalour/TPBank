@@ -43,21 +43,39 @@
     flex-direction: column;
 	width: 100%;
 	height: 100%;
+	padding: 10px;
 }
 
-.index-container{
+.operations{
 	display: flex;
+	flex-direction: column;
 	width: 100%;
-	height: 500px;
 }
 
-.red{
-	background-color: red;
-	width:70%;
-	height: 500px;
+.inOperations{
+	width:100%;
 }
 
-.blue{
-	background-color: blue;
-	width: 30%;
+.outOperations{
+	width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: white;
+  overflow: hidden;
+  width: 500px;
+  border-radius: 10px;
+}
+
+th, td {
+  font-family:'Motnserrat',sans-serif;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px;
+}
+
+th {
+  background-color: #7691ab;
+  color: white;
 }

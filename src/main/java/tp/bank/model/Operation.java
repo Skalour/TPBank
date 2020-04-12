@@ -120,6 +120,13 @@ public class Operation implements Serializable{
 	public void setType(OperationType type) {
 		this.type = type;
 	}
+
+	@Override
+	public String toString() {
+		return "Operation [id=" + id + ", fromAccount=" + fromAccount + ", toAccount=" + toAccount + ", amount="
+				+ amount + ", details=" + details + ", type=" + type + ", createdAt=" + createdAt + "]";
+	}
+	
 	
 
     

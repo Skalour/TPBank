@@ -57,14 +57,19 @@ public class LoginController {
 	    return "signup";
 	}
 
-	public Client save(Client registration){
-	     Client user = new Client();
-	        user.setLastname(registration.getLastname());
-	        user.setFirstname(registration.getFirstname());
-	        user.setEmail(registration.getEmail());
-	        user.setPassword(passwordEncoder.encode(registration.getPassword()));
-	        user = clientRepository.save(user);
-	        return user;
+	public Client save(Client newClient){
+	     Client client = new Client();
+	        client.setLastname(newClient.getLastname());
+	        client.setFirstname(newClient.getFirstname());
+	        client.setPostalAddress(newClient.getPostalAddress());
+	        client.setPostalCode(newClient.getPostalCode());
+	        client.setCity(newClient.getCity());
+	        client.setBirthdate(newClient.getBirthdate());
+	        client.setPhoneNumber(newClient.getPhoneNumber());
+	        client.setEmail(newClient.getEmail());
+	        client.setPassword(passwordEncoder.encode(newClient.getPassword()));
+	        client = clientRepository.save(client);
+	        return client;
 	    }
 
 }

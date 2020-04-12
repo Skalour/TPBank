@@ -41,7 +41,7 @@ public class Client implements Serializable{
     @Column(unique=true)
     private String email;
     
-    private int phoneNumber;
+    private String phoneNumber;
     
     @Column(nullable = true, updatable = false)
     @Temporal(TemporalType.DATE)
@@ -125,11 +125,11 @@ public class Client implements Serializable{
 		this.email = email;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
