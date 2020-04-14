@@ -41,10 +41,8 @@ public class Operation implements Serializable{
     @ManyToOne
     private Compte toAccount;
     
-    @NotBlank
     private double amount;
     
-    @NotBlank
     private String details;
     
     @Enumerated(EnumType.STRING)
